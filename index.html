@@ -3,20 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>For Mrs Dinethya ❤️</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-heart">❤️</div>
+    <p>Preparing something special...</p>
+  </div>
+
   <div class="hearts" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+
+  <button class="music-button" id="musicButton" title="Play music">
+    🔇
+  </button>
+
+  <audio id="loveMusic" loop>
+    <source src="img/Love.mp4" type="audio/mp4">
+  </audio>
 
   <main class="app">
 
     <!-- WELCOME SCREEN -->
     <section class="screen active" id="welcomeScreen">
-      <div class="card">
+      <div class="card welcome-card">
 
-        <div class="emoji">💌</div>
+        <div class="floating-envelope">💌</div>
 
         <p class="eyebrow">A little surprise from</p>
 
@@ -25,6 +42,10 @@
         <p class="subtitle">
           For the most special person in my life
         </p>
+
+        <div class="mini-divider">♥ ─── ♥ ─── ♥</div>
+
+        <p class="typing-text" id="typingText"></p>
 
         <button class="primary" data-next="questionScreen">
           Open Your Surprise ❤️
@@ -38,7 +59,7 @@
     <section class="screen" id="questionScreen">
       <div class="card question-card">
 
-        <div class="emoji">🥺❤️</div>
+        <div class="emoji heartbeat">🥺❤️</div>
 
         <p class="eyebrow">
           Mrs Dinethya, I have one important question...
@@ -62,7 +83,7 @@
 
         </div>
 
-        <p class="tiny">
+        <p class="tiny" id="hintText">
           Hint: The “No” button is a little shy. 😄
         </p>
 
@@ -74,7 +95,7 @@
     <section class="screen" id="yesScreen">
       <div class="card celebration-card">
 
-        <div class="emoji">🎉💖</div>
+        <div class="emoji celebration">🎉💖</div>
 
         <p class="eyebrow">
           The best answer in the world
@@ -99,16 +120,31 @@
 
         </div>
 
+        <div class="love-counter">
+          <span>Our love story started with one beautiful answer</span>
+          <strong id="loveCounter">0</strong>
+          <small>reasons to love you and counting...</small>
+        </div>
 
         <!-- MEMORY GALLERY -->
         <div class="memory-gallery">
 
-          <img src="img/1.jpg" alt="Our memory 1">
-          <img src="img/3.jpeg" alt="Our memory 2">
-          <img src="img/4.jpeg" alt="Our memory 3">
+          <div class="photo-card">
+            <img src="img/1.jpg" alt="Our memory 1">
+            <span>Our beautiful memory ❤️</span>
+          </div>
+
+          <div class="photo-card">
+            <img src="img/3.jpeg" alt="Our memory 2">
+            <span>Every moment with you ✨</span>
+          </div>
+
+          <div class="photo-card">
+            <img src="img/4.jpeg" alt="Our memory 3">
+            <span>Forever starts with us 🌹</span>
+          </div>
 
         </div>
-
 
         <button class="primary" data-next="finalScreen">
           One Last Surprise 💝
@@ -122,20 +158,32 @@
     <section class="screen" id="finalScreen">
       <div class="card final-card">
 
-        <div class="emoji">🌙✨</div>
+        <div class="emoji final-emoji">🌙✨</div>
 
         <p class="eyebrow">
           To my future Mrs
         </p>
 
         <h2>
-           Mr Hirushan & Mrs Dinethya 
+          Mr Hirushan & Mrs Dinethya
         </h2>
 
         <p class="message">
           No matter how many times I get to choose,
           I will always choose you.
         </p>
+
+        <div class="final-message">
+          <p>
+            You are my favorite hello, my hardest goodbye,
+            and my sweetest forever.
+          </p>
+
+          <p>
+            I don't need a perfect life.
+            I only need a life where I can love you.
+          </p>
+        </div>
 
         <p class="signature">
           With all my love,<br>
@@ -151,8 +199,13 @@
 
   </main>
 
+  <!-- PHOTO LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="close-lightbox" id="closeLightbox">×</button>
+    <img id="lightboxImage" src="" alt="Enlarged memory">
+  </div>
+
   <script src="js/app.js"></script>
 
 </body>
 </html>
-
