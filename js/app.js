@@ -133,18 +133,41 @@ function createConfetti() {
 }
 
 function startLoveCounter() {
-  let number = 0;
 
-  const interval = setInterval(() => {
-    number += Math.floor(Math.random() * 8) + 1;
+  const startDate = new Date("2024-08-26T00:00:00");
 
-    if (number >= 1000) {
-      number = 1000;
-      clearInterval(interval);
+  function updateCounter() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+      difference = 0;
     }
 
-    loveCounter.textContent = number;
-  }, 30);
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("days").textContent = days;
+
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCounter();
+
+  setInterval(updateCounter, 1000);
 }
 
 function startTypingEffect() {

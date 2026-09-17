@@ -447,3 +447,60 @@ button {
     right: 12px;
   }
 }
+.love-counter h3 {
+  margin: 12px 0;
+  color: #ffb5d8;
+  font-family: Georgia, serif;
+  font-size: 25px;
+}
+
+.counter-subtitle {
+  color: #ffe1ef;
+  margin-bottom: 22px;
+  font-size: 14px;
+}
+
+.time-counter {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.time-box {
+  padding: 18px 8px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .13);
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+}
+
+.time-box strong {
+  display: block;
+  color: #ff9dcc;
+  font-size: clamp(25px, 5vw, 45px);
+  font-weight: 700;
+}
+
+.time-box span {
+  display: block;
+  color: #ffe0ed;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.counter-footer {
+  color: #ffc2dc;
+  font-size: 14px;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .time-counter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .time-box {
+    padding: 15px 5px;
+  }
+}
